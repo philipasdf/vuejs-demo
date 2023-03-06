@@ -1,22 +1,24 @@
 <script setup lang="ts">
-import WelcomeItem from '../components/WelcomeItem.vue'
+import PokemonCard from '../components/PokemonCard.vue'
 
 import { fetchPokemonByIndex, type Pokemon } from '@/api/pokeapi';
-import { onMounted } from 'vue';
+import { onMounted, ref, type Ref } from 'vue';
 
+const pkmn: Ref<Pokemon | undefined> = ref();
 
 onMounted(() => {
   loadData();
 });
 
 function loadData() {
-  fetchPokemonByIndex(3).then((pkmn: Pokemon) => console.log(pkmn));
+  fetchPokemonByIndex(3).then((p: Pokemon) => {
+    pkmn.value = p;
+  });
 }
 </script>
 
 <template>
   <main>
-    <WelcomeItem />
-    <button type="button" class="btn btn-primary">Primary</button>
+    <PokemonCard v-if="!!pkmn" :pokemon="pkmn" />
   </main>
 </template>
