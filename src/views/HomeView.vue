@@ -17,5 +17,6 @@ function loadData() {
 <template>
   <main>
     <WelcomeItem />
+    <button type="button" class="btn btn-primary">Primary</button>
   </main>
 </template>

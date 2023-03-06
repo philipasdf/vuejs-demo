@@ -1,15 +1,15 @@
 export interface Pokemon {
-    name: string;
-    order: number;
+    name: string
+    order: number
     sprites: {
-        front_default: string;
-        back_default: string;
-    };
+        front_default: string
+        back_default: string
+    }
     types: PokemonType[]
 }
 
 export interface PokemonType {
-    slot: number;
+    slot: number
     type: {
         name: string
     }
@@ -19,7 +19,7 @@ const headers = { 'Content-type': 'application/json' };
 const endpoint = 'https://pokeapi.co/api/v2/pokemon/';
 
 export function fetchPokemonByIndex(index: number): Promise<Pokemon> {
-    return fetch(`${endpoint}${index}?variables=name`, {
+    return fetch(`${endpoint}${index}`, {
         headers,
       }).then(res => res.json());
 }
