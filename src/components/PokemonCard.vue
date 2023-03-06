@@ -7,7 +7,7 @@ defineProps<{pokemon: Pokemon}>()
   <div class="card" style="width: 18rem;">
   <img v-bind:src="pokemon.sprites.front_default" class="card-img-top" alt="Pokemon Sprite">
   <div class="card-body">
-    <h5 class="card-title">#{{pokemon.order}} {{ pokemon.name }}</h5>
+    <h5 class="card-title">#{{pokemon.id}} {{ pokemon.name }}</h5>
     <p class="card-text">Type</p>
     <ul><li v-for="types in pokemon.types">{{ types.type.name }}</li></ul>
   </div>

@@ -1,5 +1,6 @@
 export interface Pokemon {
     name: string
+    id: number
     order: number
     sprites: {
         front_default: string

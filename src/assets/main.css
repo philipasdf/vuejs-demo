@@ -1,5 +1,7 @@
 @import './base.css';
 
 #app {
-
+    padding: 1rem;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.822);
 }
